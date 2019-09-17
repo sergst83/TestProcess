@@ -1,4 +1,4 @@
-package ru.bia.process.model;
+package ru.bia.model;
 
 import org.kie.api.definition.type.Label;
 
