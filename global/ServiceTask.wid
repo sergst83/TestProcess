@@ -1,0 +1,30 @@
+[
+        [
+            "name" : "ServiceTask",
+            "displayName" : "ServiceTask",
+            "category" : "jbpm-workitems-bpmn2",
+            "description" : "",
+            "defaultHandler" : "mvel: new org.jbpm.process.workitem.bpmn2.ServiceTaskHandler()",
+            "documentation" : "jbpm-workitems-bpmn2/index.html",
+
+            "parameters" : [
+                                "mode" : new StringDataType()
+                ,"interfaceImplementationRef" : new StringDataType()
+                ,"operationImplementationRef" : new StringDataType()
+                ,"implementation" : new StringDataType()
+                ,"Parameter" : new StringDataType()
+
+            ],
+            "results" : [
+                                "Result" : new StringDataType()
+
+            ],
+            "mavenDependencies" : [
+                                 "org.jbpm:jbpm-workitems-bpmn2:7.26.0.Final"
+
+            ],
+            "icon" : "ServiceTask.png"
+
+        ]
+
+]
