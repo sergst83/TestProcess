@@ -18,6 +18,8 @@
        "name" : "CheckPickUpService",
        "parameters" : [
            "order" : new ObjectDataType("ru.bia.process.model.Order"),
+           "numberPlate" : new StringDataType(),
+           "arriveAt": new ObjectDataType("java.util.Date")
        ],
        "results" : [
            "status" : new StringDataType(),
@@ -48,11 +50,11 @@
         "name" : "CheckPutWarehouseStatus",
         "parameters" : [
              "order" : new ObjectDataType("ru.bia.process.model.Order"),
-             "numberPlate" : new StringDataType(),
-             "arriveAt": new ObjectDataType("java.util.Date")
+             "numberPlate" : new StringDataType()
          ],
          "results" : [
              "status" : new StringDataType(),
+             "puttedAt" : new ObjectDataType("java.util.Date")
          ],
          "displayName" : "Check is cargo arrived to warehouse",
          "icon" : "",
