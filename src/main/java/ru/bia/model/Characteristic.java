@@ -15,7 +15,7 @@ public class Characteristic implements java.io.Serializable {
 	@Label(value = "Адрес получателя")
 	private java.lang.String addressTo;
 	@Label(value = "Груз")
-	private ru.bia.process.model.Cargo cargo;
+	private ru.bia.model.Cargo cargo;
 
 	public Characteristic() {
 	}
