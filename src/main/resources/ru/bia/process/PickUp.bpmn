@@ -10,7 +10,7 @@
   <bpmn2:itemDefinition id="__D9964D48-2A8E-4E0D-AF8C-98625B7743EB_statusOutputXItem" structureRef="String"/>
   <bpmn2:itemDefinition id="__D9964D48-2A8E-4E0D-AF8C-98625B7743EB_numberPlateOutputXItem" structureRef="String"/>
   <bpmn2:itemDefinition id="__D9964D48-2A8E-4E0D-AF8C-98625B7743EB_arriveAtOutputXItem" structureRef="java.util.Date"/>
-  <bpmn2:process id="TestProcess.Small" drools:packageName="ru.bia.process" drools:version="1.0" drools:adHoc="false" name="Small" isExecutable="true">
+  <bpmn2:process id="TestProcess.PickUp" drools:packageName="ru.bia.process" drools:version="1.0" drools:adHoc="false" name="PickUp" isExecutable="true">
     <bpmn2:property id="order" itemSubjectRef="_orderItem" name="order"/>
     <bpmn2:property id="pickUpStatus" itemSubjectRef="_pickUpStatusItem" name="pickUpStatus"/>
     <bpmn2:sequenceFlow id="_24CEE9D9-3CA9-47BA-8A19-B3E0EF36B17E" sourceRef="_0F63BC5D-FE14-4249-A75E-EF7823F5AC32" targetRef="_3FB5DC7B-9CB2-4959-A0DC-059A558F6565"/>
@@ -193,7 +193,7 @@
     </bpmn2:subProcess>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="_1hFwJtkyEemuTbJjHNYfXQ">
-    <bpmndi:BPMNPlane id="_1hFwJ9kyEemuTbJjHNYfXQ" bpmnElement="TestProcess.Small">
+    <bpmndi:BPMNPlane id="_1hFwJ9kyEemuTbJjHNYfXQ" bpmnElement="TestProcess.PickUp">
       <bpmndi:BPMNShape id="shape__0F63BC5D-FE14-4249-A75E-EF7823F5AC32" bpmnElement="_0F63BC5D-FE14-4249-A75E-EF7823F5AC32" isExpanded="true">
         <dc:Bounds height="183.0" width="723.0" x="740.5" y="32.0"/>
       </bpmndi:BPMNShape>
