@@ -49,4 +49,12 @@ public class Characteristic implements java.io.Serializable {
 		this.cargo = cargo;
 	}
 
+    @Override
+    public String toString() {
+        return "Characteristic{" +
+                "addressFrom='" + addressFrom + '\'' +
+                ", addressTo='" + addressTo + '\'' +
+                ", cargo=" + cargo +
+                '}';
+    }
 }
