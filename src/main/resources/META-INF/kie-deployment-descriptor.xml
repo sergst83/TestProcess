@@ -9,7 +9,32 @@
     <event-listeners/>
     <task-event-listeners/>
     <globals/>
-    <work-item-handlers/>
+    <work-item-handlers>
+        <work-item-handler>
+            <resolver>mvel</resolver>
+            <identifier>new ru.bia.process.handler.CheckPickUpHandler()</identifier>
+            <parameters/>
+            <name>CheckPickUpService</name>
+        </work-item-handler>
+        <work-item-handler>
+            <resolver>mvel</resolver>
+            <identifier>new ru.bia.process.handler.PutToWarehouseHandler()</identifier>
+            <parameters/>
+            <name>PutToWarehouse</name>
+        </work-item-handler>
+        <work-item-handler>
+            <resolver>mvel</resolver>
+            <identifier>new ru.bia.process.handler.CheckPutWarehouseHandler()</identifier>
+            <parameters/>
+            <name>CheckPutWarehouseStatus</name>
+        </work-item-handler>
+        <work-item-handler>
+            <resolver>mvel</resolver>
+            <identifier>new ru.bia.process.handler.PickUpCargoHandler()</identifier>
+            <parameters/>
+            <name>PickUpCargoService</name>
+        </work-item-handler>
+    </work-item-handlers>
     <environment-entries/>
     <configurations/>
     <required-roles/>
