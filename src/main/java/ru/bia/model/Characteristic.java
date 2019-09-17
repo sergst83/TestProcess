@@ -36,16 +36,16 @@ public class Characteristic implements java.io.Serializable {
 		this.addressTo = addressTo;
 	}
 
-	public ru.bia.process.model.Cargo getCargo() {
+	public ru.bia.model.Cargo getCargo() {
 		return this.cargo;
 	}
 
-	public void setCargo(ru.bia.process.model.Cargo cargo) {
+	public void setCargo(ru.bia.model.Cargo cargo) {
 		this.cargo = cargo;
 	}
 
 	public Characteristic(java.lang.String addressFrom,
-			java.lang.String addressTo, ru.bia.process.model.Cargo cargo) {
+			java.lang.String addressTo, ru.bia.model.Cargo cargo) {
 		this.addressFrom = addressFrom;
 		this.addressTo = addressTo;
 		this.cargo = cargo;
