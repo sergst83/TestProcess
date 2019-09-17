@@ -26,7 +26,7 @@
       <bpmn2:incoming>_8E589F93-46B6-4C23-B359-B416FDEE63A9</bpmn2:incoming>
       <bpmn2:incoming>_CAE158B4-EE1A-4C22-A6A9-A508C728194F</bpmn2:incoming>
     </bpmn2:parallelGateway>
-    <bpmn2:textAnnotation id="_A522C41B-85B7-4AAB-8D8D-09E3831A43F0" name="Анализ состояния забора груза">
+    <bpmn2:textAnnotation id="_A522C41B-85B7-4AAB-8D8D-09E3831A43F0">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[Анализ состояния забора груза]]></drools:metaValue>
