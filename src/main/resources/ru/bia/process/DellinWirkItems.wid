@@ -1,15 +1,61 @@
 [
-  [
-    "name" : "MyTask", 
-    "parameters" : [ 
-        "MyFirstParam" : new StringDataType(), 
-        "MySecondParam" : new StringDataType(), 
-        "MyThirdParam" : new ObjectDataType() 
-    ], 
-    "results" : [ 
-        "Result" : new ObjectDataType("java.util.Map") 
-    ], 
-    "displayName" : "My Task", 
-    "icon" : "" 
-  ]
+    [
+       "name" : "PickUpCargoService",
+       "parameters" : [
+           "order" : new ObjectDataType("ru.bia.process.model.Order")
+       ],
+       "results" : [
+           "status" : new StringDataType(),
+           "numberPlate" : new StringDataType(),
+           "arriveAt": new ObjectDataType("java.util.Date")
+       ],
+       "displayName" : "PickUpCargoService Task",
+       "icon" : "",
+       "category" : "dellin"
+     ],
+
+     [
+       "name" : "CheckPickUpService",
+       "parameters" : [
+           "order" : new ObjectDataType("ru.bia.process.model.Order"),
+       ],
+       "results" : [
+           "status" : new StringDataType(),
+           "numberPlate" : new StringDataType(),
+           "arriveAt": new ObjectDataType("java.util.Date")
+       ],
+       "displayName" : "Check pick up task",
+       "icon" : "",
+       "category" : "dellin"
+     ],
+
+     [
+         "name" : "PutToWarehouse",
+         "parameters" : [
+             "order" : new ObjectDataType("ru.bia.process.model.Order"),
+             "numberPlate" : new StringDataType(),
+             "arriveAt": new ObjectDataType("java.util.Date")
+         ],
+         "results" : [
+             "status" : new StringDataType(),
+         ],
+         "displayName" : "Prepare warehouse for cargo",
+         "icon" : "",
+         "category" : "dellin"
+       ],
+
+    [
+        "name" : "CheckPutWarehouseStatus",
+        "parameters" : [
+             "order" : new ObjectDataType("ru.bia.process.model.Order"),
+             "numberPlate" : new StringDataType(),
+             "arriveAt": new ObjectDataType("java.util.Date")
+         ],
+         "results" : [
+             "status" : new StringDataType(),
+         ],
+         "displayName" : "Check is cargo arrived to warehouse",
+         "icon" : "",
+         "category" : "dellin"
+    ],
 ]
