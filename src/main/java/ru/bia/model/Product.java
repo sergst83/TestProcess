@@ -6,12 +6,37 @@ package ru.bia.model;
 
 public class Product implements java.io.Serializable {
 
-    static final long serialVersionUID = 1L;
+	static final long serialVersionUID = 1L;
 
-    public Product() {
-    }
+	@org.kie.api.definition.type.Label(value = "Id спецификации продукта")
+	private java.lang.String idSpec;
+	@org.kie.api.definition.type.Label(value = "Характеристики (включая значения характеристик)")
+	private java.util.List<ru.bia.model.Characteristic> caracteristics;
 
+	public Product() {
+	}
 
+	public java.lang.String getIdSpec() {
+		return this.idSpec;
+	}
 
+	public void setIdSpec(java.lang.String idSpec) {
+		this.idSpec = idSpec;
+	}
+
+	public java.util.List<ru.bia.model.Characteristic> getCaracteristics() {
+		return this.caracteristics;
+	}
+
+	public void setCaracteristics(
+			java.util.List<ru.bia.model.Characteristic> caracteristics) {
+		this.caracteristics = caracteristics;
+	}
+
+	public Product(java.lang.String idSpec,
+			java.util.List<ru.bia.model.Characteristic> caracteristics) {
+		this.idSpec = idSpec;
+		this.caracteristics = caracteristics;
+	}
 
 }
