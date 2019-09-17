@@ -40,7 +40,7 @@ public class Characteristic implements java.io.Serializable {
 		return this.cargo;
 	}
 
-	public void setCargo(ru.bia.model.Cargo cargo) {
+	public void setCargo(Cargo cargo) {
 		this.cargo = cargo;
 	}
 
