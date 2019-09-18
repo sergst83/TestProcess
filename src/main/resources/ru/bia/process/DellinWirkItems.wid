@@ -24,7 +24,8 @@
        "results" : [
            "status" : new StringDataType(),
            "numberPlate" : new StringDataType(),
-           "arriveAt": new ObjectDataType("java.util.Date")
+           "arriveAt": new ObjectDataType("java.util.Date"),
+           "pickUpAt": new ObjectDataType("java.util.Date")
        ],
        "displayName" : "Проверка статуса забора груза у отправителя",
        "icon" : "",
