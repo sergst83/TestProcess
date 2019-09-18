@@ -1,3 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- origin at X=0.0 Y=0.0 -->
 <bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmn20="http://www.omg.org/bpmn20" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" xmlns="http://www.jboss.org/drools" xmlns:ns="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd" id="_zxJ8UNlaEemuTbJjHNYfXQ" exporter="org.eclipse.bpmn2.modeler.core" exporterVersion="1.5.1.Final-v20190425-2005-B1" targetNamespace="http://www.omg.org/bpmn20">
   <bpmn2:itemDefinition id="_inOrderItem" isCollection="false" structureRef="ru.bia.model.Order"/>
   <bpmn2:itemDefinition id="ItemDefinition_2" isCollection="false" structureRef="java.util.Date"/>
@@ -29,7 +31,7 @@
       <bpmn2:lane id="Lane_2" name="Помещение груза на склад">
         <bpmn2:extensionElements>
           <drools:metaData name="elementname">
-            <drools:metaValue><![CDATA[Забор груза]]></drools:metaValue>
+            <drools:metaValue><![CDATA[Помещение груза на склад]]></drools:metaValue>
           </drools:metaData>
         </bpmn2:extensionElements>
         <bpmn2:flowNodeRef>Task_4</bpmn2:flowNodeRef>
@@ -41,6 +43,7 @@
           <drools:metaValue><![CDATA[Завершение процесса]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_1</bpmn2:incoming>
     </bpmn2:endEvent>
     <bpmn2:startEvent id="StartEvent_1" name="Запуск процесса">
       <bpmn2:extensionElements>
@@ -89,60 +92,6 @@
           <bpmn2:timeDuration xsi:type="bpmn2:tFormalExpression" id="FormalExpression_9">PT5S</bpmn2:timeDuration>
         </bpmn2:timerEventDefinition>
       </bpmn2:intermediateCatchEvent>
-      <bpmn2:task id="Task_3" drools:taskName="CheckPickUpService" name="Check pick up task">
-        <bpmn2:extensionElements>
-          <drools:metaData name="elementname">
-            <drools:metaValue><![CDATA[Check pick up task]]></drools:metaValue>
-          </drools:metaData>
-        </bpmn2:extensionElements>
-        <bpmn2:incoming>SequenceFlow_8</bpmn2:incoming>
-        <bpmn2:outgoing>SequenceFlow_7</bpmn2:outgoing>
-        <bpmn2:ioSpecification id="InputOutputSpecification_7">
-          <bpmn2:dataInput id="DataInput_5" drools:dtype="ru.bia.model.Order" itemSubjectRef="PickUp.bpmn#__182A2556-3307-4C3E-9C7B-4810780409D3_orderInputXItem" name="order"/>
-          <bpmn2:dataInput id="DataInput_6" drools:dtype="java.util.Date" itemSubjectRef="PickUp.bpmn#__182A2556-3307-4C3E-9C7B-4810780409D3_arriveAtInputXItem" name="arriveAt"/>
-          <bpmn2:dataInput id="DataInput_7" drools:dtype="Object" name="TaskName"/>
-          <bpmn2:dataOutput id="DataOutput_1" drools:dtype="String" itemSubjectRef="PickUp.bpmn#__182A2556-3307-4C3E-9C7B-4810780409D3_statusOutputXItem" name="status"/>
-          <bpmn2:dataOutput id="DataOutput_2" drools:dtype="java.util.Date" itemSubjectRef="PickUp.bpmn#__182A2556-3307-4C3E-9C7B-4810780409D3_arriveAtOutputXItem" name="arriveAt"/>
-          <bpmn2:dataOutput id="DataOutput_3" drools:dtype="String" itemSubjectRef="PickUp.bpmn#__182A2556-3307-4C3E-9C7B-4810780409D3_numberPlateOutputXItem" name="numberPlate"/>
-          <bpmn2:inputSet id="InputSet_5">
-            <bpmn2:dataInputRefs>DataInput_5</bpmn2:dataInputRefs>
-            <bpmn2:dataInputRefs>DataInput_6</bpmn2:dataInputRefs>
-            <bpmn2:dataInputRefs>DataInput_7</bpmn2:dataInputRefs>
-          </bpmn2:inputSet>
-          <bpmn2:outputSet id="OutputSet_7">
-            <bpmn2:dataOutputRefs>DataOutput_1</bpmn2:dataOutputRefs>
-            <bpmn2:dataOutputRefs>DataOutput_2</bpmn2:dataOutputRefs>
-            <bpmn2:dataOutputRefs>DataOutput_3</bpmn2:dataOutputRefs>
-          </bpmn2:outputSet>
-        </bpmn2:ioSpecification>
-        <bpmn2:dataInputAssociation id="DataInputAssociation_5">
-          <bpmn2:sourceRef>order</bpmn2:sourceRef>
-          <bpmn2:targetRef>DataInput_5</bpmn2:targetRef>
-        </bpmn2:dataInputAssociation>
-        <bpmn2:dataInputAssociation id="DataInputAssociation_6">
-          <bpmn2:sourceRef>arriveAt</bpmn2:sourceRef>
-          <bpmn2:targetRef>DataInput_6</bpmn2:targetRef>
-        </bpmn2:dataInputAssociation>
-        <bpmn2:dataInputAssociation id="DataInputAssociation_7">
-          <bpmn2:targetRef>DataInput_7</bpmn2:targetRef>
-          <bpmn2:assignment id="Assignment_5">
-            <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="FormalExpression_10"><![CDATA[CheckPickUpService]]></bpmn2:from>
-            <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="FormalExpression_11">_182A2556-3307-4C3E-9C7B-4810780409D3_TaskNameInputX</bpmn2:to>
-          </bpmn2:assignment>
-        </bpmn2:dataInputAssociation>
-        <bpmn2:dataOutputAssociation id="DataOutputAssociation_1">
-          <bpmn2:sourceRef>DataOutput_1</bpmn2:sourceRef>
-          <bpmn2:targetRef>pickUpStatus</bpmn2:targetRef>
-        </bpmn2:dataOutputAssociation>
-        <bpmn2:dataOutputAssociation id="DataOutputAssociation_2">
-          <bpmn2:sourceRef>DataOutput_2</bpmn2:sourceRef>
-          <bpmn2:targetRef>arriveAt</bpmn2:targetRef>
-        </bpmn2:dataOutputAssociation>
-        <bpmn2:dataOutputAssociation id="DataOutputAssociation_3">
-          <bpmn2:sourceRef>DataOutput_3</bpmn2:sourceRef>
-          <bpmn2:targetRef>numberPlate</bpmn2:targetRef>
-        </bpmn2:dataOutputAssociation>
-      </bpmn2:task>
       <bpmn2:endEvent id="EndEvent_2">
         <bpmn2:extensionElements>
           <drools:metaData name="elementname">
@@ -151,8 +100,8 @@
         </bpmn2:extensionElements>
         <bpmn2:incoming>SequenceFlow_7</bpmn2:incoming>
       </bpmn2:endEvent>
-      <bpmn2:sequenceFlow id="SequenceFlow_7" sourceRef="Task_3" targetRef="EndEvent_2"/>
-      <bpmn2:sequenceFlow id="SequenceFlow_8" sourceRef="IntermediateCatchEvent_1" targetRef="Task_3">
+      <bpmn2:sequenceFlow id="SequenceFlow_7" sourceRef="Task_2" targetRef="EndEvent_2"/>
+      <bpmn2:sequenceFlow id="SequenceFlow_8" sourceRef="IntermediateCatchEvent_1" targetRef="Task_2">
         <bpmn2:extensionElements>
           <drools:metaData name="isAutoConnection.source">
             <drools:metaValue><![CDATA[true]]></drools:metaValue>
@@ -172,6 +121,19 @@
           </drools:metaData>
         </bpmn2:extensionElements>
       </bpmn2:sequenceFlow>
+      <bpmn2:task id="Task_2" name="Check pick up task">
+        <bpmn2:extensionElements>
+          <drools:metaData name="elementname">
+            <drools:metaValue><![CDATA[Check pick up task]]></drools:metaValue>
+          </drools:metaData>
+        </bpmn2:extensionElements>
+        <bpmn2:incoming>SequenceFlow_8</bpmn2:incoming>
+        <bpmn2:outgoing>SequenceFlow_7</bpmn2:outgoing>
+        <bpmn2:ioSpecification id="InputOutputSpecification_7">
+          <bpmn2:inputSet id="InputSet_5"/>
+          <bpmn2:outputSet id="OutputSet_7"/>
+        </bpmn2:ioSpecification>
+      </bpmn2:task>
     </bpmn2:subProcess>
     <bpmn2:sequenceFlow id="SequenceFlow_10" drools:priority="1" sourceRef="SubProcess_3" targetRef="ExclusiveGateway_10"/>
     <bpmn2:task id="Task_4" name="Подготовка к приему груза">
@@ -181,6 +143,7 @@
         </drools:metaData>
       </bpmn2:extensionElements>
       <bpmn2:incoming>SequenceFlow_11</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_1</bpmn2:outgoing>
     </bpmn2:task>
     <bpmn2:sequenceFlow id="SequenceFlow_11" drools:priority="1" name="Да" sourceRef="ExclusiveGateway_10" targetRef="Task_4">
       <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_14" language="http://www.java.com/java">return KieFunctions.equalsTo(pickUpStatus, &quot;succeeded&quot;);</bpmn2:conditionExpression>
@@ -189,120 +152,128 @@
       <bpmn2:incoming>SequenceFlow_10</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_11</bpmn2:outgoing>
     </bpmn2:exclusiveGateway>
+    <bpmn2:sequenceFlow id="SequenceFlow_1" drools:priority="1" sourceRef="Task_4" targetRef="EndEvent_1"/>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="_zxJ8VNlaEemuTbJjHNYfXQ">
     <bpmndi:BPMNPlane id="_zxJ8VdlaEemuTbJjHNYfXQ" bpmnElement="TestProcess.FullProcess">
       <bpmndi:BPMNShape id="BPMNShape_Lane_1" bpmnElement="Lane_1" isHorizontal="true">
         <dc:Bounds height="341.0" width="981.0" x="200.0" y="10.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_1">
           <dc:Bounds height="68.0" width="14.0" x="206.0" y="146.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_Lane_2" bpmnElement="Lane_2" isHorizontal="true">
         <dc:Bounds height="301.0" width="731.0" x="200.0" y="360.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_2">
           <dc:Bounds height="154.0" width="14.0" x="206.0" y="433.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_SubProcess_3" bpmnElement="SubProcess_3" isExpanded="true">
         <dc:Bounds height="185.0" width="511.0" x="400.0" y="16.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_3">
           <dc:Bounds height="14.0" width="179.0" x="406.0" y="19.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_1" bpmnElement="EndEvent_1">
-        <dc:Bounds height="36.0" width="36.0" x="70.0" y="470.0"/>
-        <bpmndi:BPMNLabel>
-          <dc:Bounds height="28.0" width="75.0" x="51.0" y="506.0"/>
+        <dc:Bounds height="36.0" width="36.0" x="70.0" y="479.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_4">
+          <dc:Bounds height="28.0" width="75.0" x="51.0" y="515.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_StartEvent_1" bpmnElement="StartEvent_1">
         <dc:Bounds height="36.0" width="36.0" x="52.0" y="89.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_5">
           <dc:Bounds height="28.0" width="56.0" x="42.0" y="125.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_Task_1" bpmnElement="Task_1">
         <dc:Bounds height="71.0" width="141.0" x="220.0" y="72.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_6">
           <dc:Bounds height="14.0" width="73.0" x="254.0" y="100.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_StartEvent_2" bpmnElement="StartEvent_2">
-        <dc:Bounds height="56.0" width="56.0" x="420.0" y="92.0"/>
-        <bpmndi:BPMNLabel/>
+        <dc:Bounds height="56.0" width="56.0" x="420.0" y="81.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_7"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_IntermediateCatchEvent_1" bpmnElement="IntermediateCatchEvent_1">
-        <dc:Bounds height="56.0" width="56.0" x="514.0" y="92.0"/>
-        <bpmndi:BPMNLabel>
-          <dc:Bounds height="28.0" width="68.0" x="508.0" y="148.0"/>
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_Task_3" bpmnElement="Task_3">
-        <dc:Bounds height="102.0" width="154.0" x="613.0" y="70.0"/>
-        <bpmndi:BPMNLabel>
-          <dc:Bounds height="14.0" width="102.0" x="639.0" y="114.0"/>
+        <dc:Bounds height="56.0" width="56.0" x="514.0" y="81.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_8">
+          <dc:Bounds height="28.0" width="68.0" x="508.0" y="137.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_EndEvent_2" bpmnElement="EndEvent_2">
-        <dc:Bounds height="56.0" width="56.0" x="807.0" y="93.0"/>
-        <bpmndi:BPMNLabel/>
+        <dc:Bounds height="56.0" width="56.0" x="820.0" y="81.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_10"/>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_Task_4" bpmnElement="Task_4" isExpanded="true">
         <dc:Bounds height="50.0" width="110.0" x="790.0" y="486.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_11">
           <dc:Bounds height="28.0" width="79.0" x="805.0" y="497.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_10" bpmnElement="ExclusiveGateway_10" isMarkerVisible="true">
         <dc:Bounds height="50.0" width="50.0" x="630.0" y="240.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_12">
           <dc:Bounds height="14.0" width="76.0" x="617.0" y="290.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_Task_2" bpmnElement="Task_2">
+        <dc:Bounds height="50.0" width="110.0" x="635.0" y="84.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="14.0" width="102.0" x="639.0" y="102.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_5" bpmnElement="SequenceFlow_5" sourceElement="BPMNShape_StartEvent_1" targetElement="BPMNShape_Task_1">
         <di:waypoint xsi:type="dc:Point" x="88.0" y="107.0"/>
         <di:waypoint xsi:type="dc:Point" x="154.0" y="107.0"/>
         <di:waypoint xsi:type="dc:Point" x="220.0" y="107.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_13"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_6" bpmnElement="SequenceFlow_6" sourceElement="BPMNShape_Task_1" targetElement="BPMNShape_SubProcess_3">
         <di:waypoint xsi:type="dc:Point" x="361.0" y="107.0"/>
         <di:waypoint xsi:type="dc:Point" x="380.0" y="107.0"/>
         <di:waypoint xsi:type="dc:Point" x="400.0" y="108.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_14"/>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_7" bpmnElement="SequenceFlow_7" sourceElement="BPMNShape_Task_3" targetElement="BPMNShape_EndEvent_2">
-        <di:waypoint xsi:type="dc:Point" x="767.0" y="121.0"/>
-        <di:waypoint xsi:type="dc:Point" x="787.0" y="121.0"/>
-        <di:waypoint xsi:type="dc:Point" x="807.0" y="121.0"/>
-        <bpmndi:BPMNLabel/>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_7" bpmnElement="SequenceFlow_7" sourceElement="BPMNShape_Task_2" targetElement="BPMNShape_EndEvent_2">
+        <di:waypoint xsi:type="dc:Point" x="745.0" y="109.0"/>
+        <di:waypoint xsi:type="dc:Point" x="782.0" y="109.0"/>
+        <di:waypoint xsi:type="dc:Point" x="820.0" y="109.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_15"/>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_8" bpmnElement="SequenceFlow_8" sourceElement="BPMNShape_IntermediateCatchEvent_1" targetElement="BPMNShape_Task_3">
-        <di:waypoint xsi:type="dc:Point" x="570.0" y="120.0"/>
-        <di:waypoint xsi:type="dc:Point" x="591.0" y="120.0"/>
-        <di:waypoint xsi:type="dc:Point" x="613.0" y="121.0"/>
-        <bpmndi:BPMNLabel/>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_8" bpmnElement="SequenceFlow_8" sourceElement="BPMNShape_IntermediateCatchEvent_1" targetElement="BPMNShape_Task_2">
+        <di:waypoint xsi:type="dc:Point" x="570.0" y="109.0"/>
+        <di:waypoint xsi:type="dc:Point" x="602.0" y="109.0"/>
+        <di:waypoint xsi:type="dc:Point" x="635.0" y="109.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_16"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_9" bpmnElement="SequenceFlow_9" sourceElement="BPMNShape_StartEvent_2" targetElement="BPMNShape_IntermediateCatchEvent_1">
-        <di:waypoint xsi:type="dc:Point" x="476.0" y="120.0"/>
-        <di:waypoint xsi:type="dc:Point" x="495.0" y="120.0"/>
-        <di:waypoint xsi:type="dc:Point" x="514.0" y="120.0"/>
-        <bpmndi:BPMNLabel/>
+        <di:waypoint xsi:type="dc:Point" x="476.0" y="109.0"/>
+        <di:waypoint xsi:type="dc:Point" x="495.0" y="109.0"/>
+        <di:waypoint xsi:type="dc:Point" x="514.0" y="109.0"/>
+        <bpmndi:BPMNLabel id="BPMNLabel_17"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_10" bpmnElement="SequenceFlow_10" sourceElement="BPMNShape_SubProcess_3" targetElement="BPMNShape_ExclusiveGateway_10">
         <di:waypoint xsi:type="dc:Point" x="655.0" y="201.0"/>
         <di:waypoint xsi:type="dc:Point" x="655.0" y="220.0"/>
         <di:waypoint xsi:type="dc:Point" x="655.0" y="240.0"/>
-        <bpmndi:BPMNLabel/>
+        <bpmndi:BPMNLabel id="BPMNLabel_18"/>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_11" bpmnElement="SequenceFlow_11" sourceElement="BPMNShape_ExclusiveGateway_10" targetElement="BPMNShape_Task_4">
         <di:waypoint xsi:type="dc:Point" x="680.0" y="265.0"/>
         <di:waypoint xsi:type="dc:Point" x="845.0" y="265.0"/>
         <di:waypoint xsi:type="dc:Point" x="845.0" y="486.0"/>
-        <bpmndi:BPMNLabel>
+        <bpmndi:BPMNLabel id="BPMNLabel_19">
           <dc:Bounds height="14.0" width="15.0" x="838.0" y="294.0"/>
         </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_1" bpmnElement="SequenceFlow_1" sourceElement="BPMNShape_Task_4" targetElement="BPMNShape_EndEvent_1">
+        <di:waypoint xsi:type="dc:Point" x="790.0" y="511.0"/>
+        <di:waypoint xsi:type="dc:Point" x="448.0" y="511.0"/>
+        <di:waypoint xsi:type="dc:Point" x="448.0" y="497.0"/>
+        <di:waypoint xsi:type="dc:Point" x="106.0" y="497.0"/>
+        <bpmndi:BPMNLabel/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
