@@ -9,7 +9,7 @@
            "numberPlate" : new StringDataType(),
            "arriveAt": new ObjectDataType("java.util.Date")
        ],
-       "displayName" : "PickUpCargoService Task",
+       "displayName" : "Запрос на забор груза у уотправителя",
        "icon" : "",
        "category" : "dellin"
      ],
@@ -26,7 +26,7 @@
            "numberPlate" : new StringDataType(),
            "arriveAt": new ObjectDataType("java.util.Date")
        ],
-       "displayName" : "Check pick up task",
+       "displayName" : "Проверка статуса забора груза у отправителя",
        "icon" : "",
        "category" : "dellin"
      ],
@@ -41,7 +41,7 @@
          "results" : [
              "status" : new StringDataType(),
          ],
-         "displayName" : "Prepare warehouse for cargo",
+         "displayName" : "Запрос на подготовку склада к приему груза",
          "icon" : "",
          "category" : "dellin"
        ],
@@ -56,7 +56,7 @@
              "status" : new StringDataType(),
              "puttedAt" : new ObjectDataType("java.util.Date")
          ],
-         "displayName" : "Check is cargo arrived to warehouse",
+         "displayName" : "Проверка поступления груза на склад",
          "icon" : "",
          "category" : "dellin"
     ],
