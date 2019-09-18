@@ -1,32 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- origin at X=0.0 Y=0.0 -->
-<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmn20="http://www.omg.org/bpmn20" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" xmlns="http://www.jboss.org/drools" xmlns:ns="http://www.w3.org/2001/XMLSchema" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd" id="_zxJ8UNlaEemuTbJjHNYfXQ" exporter="org.eclipse.bpmn2.modeler.core" exporterVersion="1.5.1.Final-v20190425-2005-B1" targetNamespace="http://www.omg.org/bpmn20">
-  <bpmn2:itemDefinition id="_inOrderItem" isCollection="false" structureRef="ru.bia.model.Order"/>
-  <bpmn2:itemDefinition id="ItemDefinition_2" isCollection="false" structureRef="java.util.Date"/>
-  <bpmn2:itemDefinition id="ItemDefinition_3" isCollection="false" structureRef="java.lang.String"/>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.omg.org/bpmn20" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_PhW_gNntEemaB62ZcsxjLQ" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd http://www.jboss.org/drools drools.xsd http://www.bpsim.org/schemas/1.0 bpsim.xsd http://www.omg.org/spec/DD/20100524/DC DC.xsd http://www.omg.org/spec/DD/20100524/DI DI.xsd " exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+  <bpmn2:itemDefinition id="_inOrderItem" structureRef="ru.bia.model.Order"/>
+  <bpmn2:itemDefinition id="_pickUpStatusItem" structureRef="java.lang.String"/>
+  <bpmn2:itemDefinition id="_pickUpTimeItem" structureRef="java.util.Date"/>
+  <bpmn2:itemDefinition id="_putWhStatusItem" structureRef="java.lang.String"/>
+  <bpmn2:itemDefinition id="_putWhTimeItem" structureRef="java.util.Date"/>
+  <bpmn2:itemDefinition id="_pickUpNumPlateItem" structureRef="java.lang.String"/>
+  <bpmn2:itemDefinition id="_arriveAtPlanItem" structureRef="java.util.Date"/>
+  <bpmn2:itemDefinition id="_arriveAtFactItem" structureRef="java.util.Date"/>
+  <bpmn2:itemDefinition id="__A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_orderInputXItem" structureRef="ru.bia.process.model.Order"/>
+  <bpmn2:itemDefinition id="__A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_arriveAtOutputXItem" structureRef="java.util.Date"/>
+  <bpmn2:itemDefinition id="__A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_numberPlateOutputXItem" structureRef="String"/>
+  <bpmn2:itemDefinition id="__A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_statusOutputXItem" structureRef="String"/>
   <bpmn2:process id="TestProcess.FullProcess" drools:packageName="ru.bia.process" drools:version="1.0" drools:adHoc="false" name="FullProcess" isExecutable="true">
     <bpmn2:extensionElements>
       <drools:import name="java.util.Date"/>
       <drools:import name="java.lang.String"/>
     </bpmn2:extensionElements>
     <bpmn2:property id="inOrder" itemSubjectRef="_inOrderItem" name="inOrder"/>
-    <bpmn2:property id="pickUpStatus" itemSubjectRef="ItemDefinition_3" name="pickUpStatus"/>
-    <bpmn2:property id="pickUpTime" itemSubjectRef="ItemDefinition_2" name="pickUpTime"/>
-    <bpmn2:property id="putWhStatus" itemSubjectRef="ItemDefinition_3" name="putWhStatus"/>
-    <bpmn2:property id="putWhTime" itemSubjectRef="ItemDefinition_2" name="putWhTime"/>
-    <bpmn2:property id="pickUpNumPlate" itemSubjectRef="ItemDefinition_3" name="pickUpNumPlate"/>
-    <bpmn2:property id="arriveAtPlan" itemSubjectRef="ItemDefinition_2" name="arriveAtPlan"/>
-    <bpmn2:property id="arriveAtFact" itemSubjectRef="ItemDefinition_2" name="arriveAtFact"/>
-    <bpmn2:laneSet id="LaneSet_1" name="Lane Set 1">
+    <bpmn2:property id="pickUpStatus" itemSubjectRef="_pickUpStatusItem" name="pickUpStatus"/>
+    <bpmn2:property id="pickUpTime" itemSubjectRef="_pickUpTimeItem" name="pickUpTime"/>
+    <bpmn2:property id="putWhStatus" itemSubjectRef="_putWhStatusItem" name="putWhStatus"/>
+    <bpmn2:property id="putWhTime" itemSubjectRef="_putWhTimeItem" name="putWhTime"/>
+    <bpmn2:property id="pickUpNumPlate" itemSubjectRef="_pickUpNumPlateItem" name="pickUpNumPlate"/>
+    <bpmn2:property id="arriveAtPlan" itemSubjectRef="_arriveAtPlanItem" name="arriveAtPlan"/>
+    <bpmn2:property id="arriveAtFact" itemSubjectRef="_arriveAtFactItem" name="arriveAtFact"/>
+    <bpmn2:laneSet id="_PhW_gdntEemaB62ZcsxjLQ">
       <bpmn2:lane id="Lane_1" name="Забор груза">
         <bpmn2:extensionElements>
           <drools:metaData name="elementname">
             <drools:metaValue><![CDATA[Забор груза]]></drools:metaValue>
           </drools:metaData>
         </bpmn2:extensionElements>
-        <bpmn2:flowNodeRef>Task_1</bpmn2:flowNodeRef>
-        <bpmn2:flowNodeRef>SubProcess_3</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>_A4379EBB-0D86-44DD-A218-E8F8D95AE5EF</bpmn2:flowNodeRef>
         <bpmn2:flowNodeRef>ExclusiveGateway_10</bpmn2:flowNodeRef>
+        <bpmn2:flowNodeRef>SubProcess_3</bpmn2:flowNodeRef>
       </bpmn2:lane>
       <bpmn2:lane id="Lane_2" name="Помещение груза на склад">
         <bpmn2:extensionElements>
@@ -37,14 +45,89 @@
         <bpmn2:flowNodeRef>Task_4</bpmn2:flowNodeRef>
       </bpmn2:lane>
     </bpmn2:laneSet>
-    <bpmn2:endEvent id="EndEvent_1" name="Завершение процесса">
+    <bpmn2:sequenceFlow id="_21EBFE37-812A-4DE5-8FCD-F634BFA99703" sourceRef="SubProcess_3" targetRef="ExclusiveGateway_10"/>
+    <bpmn2:sequenceFlow id="_2466CAC6-EAE6-4D51-A8AF-A3856954DFB3" name="Нет" sourceRef="ExclusiveGateway_10" targetRef="SubProcess_3">
       <bpmn2:extensionElements>
+        <drools:metaData name="isAutoConnection.source">
+          <drools:metaValue><![CDATA[true]]></drools:metaValue>
+        </drools:metaData>
         <drools:metaData name="elementname">
-          <drools:metaValue><![CDATA[Завершение процесса]]></drools:metaValue>
+          <drools:metaValue><![CDATA[Нет]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:incoming>SequenceFlow_1</bpmn2:incoming>
-    </bpmn2:endEvent>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_PhW_gtntEemaB62ZcsxjLQ" language="http://www.java.com/java"><![CDATA[return KieFunctions.equalsTo(pickUpStatus, "running");]]></bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
+    <bpmn2:sequenceFlow id="_8478F89F-CC9E-4503-94CD-07360C5DD8BF" sourceRef="_A4379EBB-0D86-44DD-A218-E8F8D95AE5EF" targetRef="SubProcess_3">
+      <bpmn2:extensionElements>
+        <drools:metaData name="isAutoConnection.source">
+          <drools:metaValue><![CDATA[true]]></drools:metaValue>
+        </drools:metaData>
+        <drools:metaData name="isAutoConnection.target">
+          <drools:metaValue><![CDATA[true]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:sequenceFlow>
+    <bpmn2:sequenceFlow id="SequenceFlow_11" drools:priority="1" name="Да" sourceRef="ExclusiveGateway_10" targetRef="Task_4">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Да]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="_PhW_g9ntEemaB62ZcsxjLQ" language="http://www.java.com/java"><![CDATA[return KieFunctions.equalsTo(pickUpStatus, "succeeded");]]></bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
+    <bpmn2:sequenceFlow id="SequenceFlow_5" drools:priority="1" sourceRef="StartEvent_1" targetRef="_A4379EBB-0D86-44DD-A218-E8F8D95AE5EF"/>
+    <bpmn2:sequenceFlow id="SequenceFlow_1" drools:priority="1" sourceRef="Task_4" targetRef="EndEvent_1"/>
+    <bpmn2:exclusiveGateway id="ExclusiveGateway_10" name="Груз забран?" gatewayDirection="Diverging">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Груз забран?]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_21EBFE37-812A-4DE5-8FCD-F634BFA99703</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_11</bpmn2:outgoing>
+      <bpmn2:outgoing>_2466CAC6-EAE6-4D51-A8AF-A3856954DFB3</bpmn2:outgoing>
+    </bpmn2:exclusiveGateway>
+    <bpmn2:task id="_A4379EBB-0D86-44DD-A218-E8F8D95AE5EF" drools:taskName="PickUpCargoService" name="Отправляем запрос на забор груза">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Отправляем запрос на забор груза]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_5</bpmn2:incoming>
+      <bpmn2:outgoing>_8478F89F-CC9E-4503-94CD-07360C5DD8BF</bpmn2:outgoing>
+      <bpmn2:ioSpecification id="_PhW_hNntEemaB62ZcsxjLQ">
+        <bpmn2:dataInput id="_A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_orderInputX" drools:dtype="ru.bia.process.model.Order" itemSubjectRef="__A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_orderInputXItem" name="order"/>
+        <bpmn2:dataInput id="_A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_TaskNameInputX" drools:dtype="Object" name="TaskName"/>
+        <bpmn2:dataOutput id="_A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_arriveAtOutputX" drools:dtype="java.util.Date" itemSubjectRef="__A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_arriveAtOutputXItem" name="arriveAt"/>
+        <bpmn2:dataOutput id="_A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_numberPlateOutputX" drools:dtype="String" itemSubjectRef="__A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_numberPlateOutputXItem" name="numberPlate"/>
+        <bpmn2:dataOutput id="_A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_statusOutputX" drools:dtype="String" itemSubjectRef="__A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_statusOutputXItem" name="status"/>
+        <bpmn2:inputSet id="_PhW_hdntEemaB62ZcsxjLQ">
+          <bpmn2:dataInputRefs>_A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_orderInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_TaskNameInputX</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+        <bpmn2:outputSet id="_PhW_htntEemaB62ZcsxjLQ">
+          <bpmn2:dataOutputRefs>_A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_arriveAtOutputX</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>_A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_numberPlateOutputX</bpmn2:dataOutputRefs>
+          <bpmn2:dataOutputRefs>_A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_statusOutputX</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation id="_PhXmkNntEemaB62ZcsxjLQ">
+        <bpmn2:targetRef>_A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_TaskNameInputX</bpmn2:targetRef>
+        <bpmn2:assignment id="_PhXmkdntEemaB62ZcsxjLQ">
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression" id="_PhXmktntEemaB62ZcsxjLQ"><![CDATA[PickUpCargoService]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression" id="_PhXmk9ntEemaB62ZcsxjLQ">_A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_TaskNameInputX</bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+    </bpmn2:task>
+    <bpmn2:task id="Task_4" name="Подготовка к приему груза">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Подготовка к приему груза]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>SequenceFlow_11</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_1</bpmn2:outgoing>
+    </bpmn2:task>
     <bpmn2:startEvent id="StartEvent_1" name="Запуск процесса">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
@@ -53,64 +136,23 @@
       </bpmn2:extensionElements>
       <bpmn2:outgoing>SequenceFlow_5</bpmn2:outgoing>
     </bpmn2:startEvent>
-    <bpmn2:sequenceFlow id="SequenceFlow_5" drools:priority="1" sourceRef="StartEvent_1" targetRef="Task_1"/>
-    <bpmn2:task id="Task_1" name="Забрать груз">
+    <bpmn2:endEvent id="EndEvent_1" name="Завершение процесса">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
-          <drools:metaValue><![CDATA[Забрать груз]]></drools:metaValue>
+          <drools:metaValue><![CDATA[Завершение процесса]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:incoming>SequenceFlow_5</bpmn2:incoming>
-      <bpmn2:outgoing>SequenceFlow_6</bpmn2:outgoing>
-    </bpmn2:task>
-    <bpmn2:sequenceFlow id="SequenceFlow_6" drools:priority="1" sourceRef="Task_1" targetRef="SubProcess_3"/>
+      <bpmn2:incoming>SequenceFlow_1</bpmn2:incoming>
+    </bpmn2:endEvent>
     <bpmn2:subProcess id="SubProcess_3" name="Проверка статуса забора груза">
       <bpmn2:extensionElements>
         <drools:metaData name="elementname">
           <drools:metaValue><![CDATA[Проверка статуса забора груза]]></drools:metaValue>
         </drools:metaData>
       </bpmn2:extensionElements>
-      <bpmn2:incoming>SequenceFlow_6</bpmn2:incoming>
-      <bpmn2:outgoing>SequenceFlow_10</bpmn2:outgoing>
-      <bpmn2:startEvent id="StartEvent_2">
-        <bpmn2:extensionElements>
-          <drools:metaData name="elementname">
-            <drools:metaValue><![CDATA[]]></drools:metaValue>
-          </drools:metaData>
-        </bpmn2:extensionElements>
-        <bpmn2:outgoing>SequenceFlow_9</bpmn2:outgoing>
-      </bpmn2:startEvent>
-      <bpmn2:intermediateCatchEvent id="IntermediateCatchEvent_1" name="CheckPuckUpTimeout">
-        <bpmn2:extensionElements>
-          <drools:metaData name="elementname">
-            <drools:metaValue><![CDATA[CheckPuckUpTimeout]]></drools:metaValue>
-          </drools:metaData>
-        </bpmn2:extensionElements>
-        <bpmn2:incoming>SequenceFlow_9</bpmn2:incoming>
-        <bpmn2:outgoing>SequenceFlow_8</bpmn2:outgoing>
-        <bpmn2:timerEventDefinition id="TimerEventDefinition_1">
-          <bpmn2:timeDuration xsi:type="bpmn2:tFormalExpression" id="FormalExpression_9">PT5S</bpmn2:timeDuration>
-        </bpmn2:timerEventDefinition>
-      </bpmn2:intermediateCatchEvent>
-      <bpmn2:endEvent id="EndEvent_2">
-        <bpmn2:extensionElements>
-          <drools:metaData name="elementname">
-            <drools:metaValue><![CDATA[]]></drools:metaValue>
-          </drools:metaData>
-        </bpmn2:extensionElements>
-        <bpmn2:incoming>SequenceFlow_7</bpmn2:incoming>
-      </bpmn2:endEvent>
-      <bpmn2:sequenceFlow id="SequenceFlow_7" sourceRef="Task_2" targetRef="EndEvent_2"/>
-      <bpmn2:sequenceFlow id="SequenceFlow_8" sourceRef="IntermediateCatchEvent_1" targetRef="Task_2">
-        <bpmn2:extensionElements>
-          <drools:metaData name="isAutoConnection.source">
-            <drools:metaValue><![CDATA[true]]></drools:metaValue>
-          </drools:metaData>
-          <drools:metaData name="isAutoConnection.target">
-            <drools:metaValue><![CDATA[true]]></drools:metaValue>
-          </drools:metaData>
-        </bpmn2:extensionElements>
-      </bpmn2:sequenceFlow>
+      <bpmn2:incoming>_8478F89F-CC9E-4503-94CD-07360C5DD8BF</bpmn2:incoming>
+      <bpmn2:incoming>_2466CAC6-EAE6-4D51-A8AF-A3856954DFB3</bpmn2:incoming>
+      <bpmn2:outgoing>_21EBFE37-812A-4DE5-8FCD-F634BFA99703</bpmn2:outgoing>
       <bpmn2:sequenceFlow id="SequenceFlow_9" sourceRef="StartEvent_2" targetRef="IntermediateCatchEvent_1">
         <bpmn2:extensionElements>
           <drools:metaData name="isAutoConnection.source">
@@ -121,160 +163,151 @@
           </drools:metaData>
         </bpmn2:extensionElements>
       </bpmn2:sequenceFlow>
-      <bpmn2:task id="Task_2" name="Check pick up task">
+      <bpmn2:endEvent id="EndEvent_2"/>
+      <bpmn2:startEvent id="StartEvent_2">
+        <bpmn2:outgoing>SequenceFlow_9</bpmn2:outgoing>
+      </bpmn2:startEvent>
+      <bpmn2:intermediateCatchEvent id="IntermediateCatchEvent_1" name="CheckPuckUpTimeout">
         <bpmn2:extensionElements>
           <drools:metaData name="elementname">
-            <drools:metaValue><![CDATA[Check pick up task]]></drools:metaValue>
+            <drools:metaValue><![CDATA[CheckPuckUpTimeout]]></drools:metaValue>
           </drools:metaData>
         </bpmn2:extensionElements>
-        <bpmn2:incoming>SequenceFlow_8</bpmn2:incoming>
-        <bpmn2:outgoing>SequenceFlow_7</bpmn2:outgoing>
-        <bpmn2:ioSpecification id="InputOutputSpecification_7">
-          <bpmn2:inputSet id="InputSet_5"/>
-          <bpmn2:outputSet id="OutputSet_7"/>
-        </bpmn2:ioSpecification>
-      </bpmn2:task>
+        <bpmn2:incoming>SequenceFlow_9</bpmn2:incoming>
+        <bpmn2:timerEventDefinition id="_PhXmlNntEemaB62ZcsxjLQ">
+          <bpmn2:timeDuration xsi:type="bpmn2:tFormalExpression" id="_PhXmldntEemaB62ZcsxjLQ">PT5S</bpmn2:timeDuration>
+        </bpmn2:timerEventDefinition>
+      </bpmn2:intermediateCatchEvent>
     </bpmn2:subProcess>
-    <bpmn2:sequenceFlow id="SequenceFlow_10" drools:priority="1" sourceRef="SubProcess_3" targetRef="ExclusiveGateway_10"/>
-    <bpmn2:task id="Task_4" name="Подготовка к приему груза">
-      <bpmn2:extensionElements>
-        <drools:metaData name="elementname">
-          <drools:metaValue><![CDATA[Подготовка к приему груза]]></drools:metaValue>
-        </drools:metaData>
-      </bpmn2:extensionElements>
-      <bpmn2:incoming>SequenceFlow_11</bpmn2:incoming>
-      <bpmn2:outgoing>SequenceFlow_1</bpmn2:outgoing>
-    </bpmn2:task>
-    <bpmn2:sequenceFlow id="SequenceFlow_11" drools:priority="1" name="Да" sourceRef="ExclusiveGateway_10" targetRef="Task_4">
-      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" id="FormalExpression_14" language="http://www.java.com/java">return KieFunctions.equalsTo(pickUpStatus, &quot;succeeded&quot;);</bpmn2:conditionExpression>
-    </bpmn2:sequenceFlow>
-    <bpmn2:exclusiveGateway id="ExclusiveGateway_10" name="Груз забран?" gatewayDirection="Diverging">
-      <bpmn2:incoming>SequenceFlow_10</bpmn2:incoming>
-      <bpmn2:outgoing>SequenceFlow_11</bpmn2:outgoing>
-    </bpmn2:exclusiveGateway>
-    <bpmn2:sequenceFlow id="SequenceFlow_1" drools:priority="1" sourceRef="Task_4" targetRef="EndEvent_1"/>
   </bpmn2:process>
-  <bpmndi:BPMNDiagram id="_zxJ8VNlaEemuTbJjHNYfXQ">
-    <bpmndi:BPMNPlane id="_zxJ8VdlaEemuTbJjHNYfXQ" bpmnElement="TestProcess.FullProcess">
-      <bpmndi:BPMNShape id="BPMNShape_Lane_1" bpmnElement="Lane_1" isHorizontal="true">
-        <dc:Bounds height="341.0" width="981.0" x="200.0" y="10.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_1">
-          <dc:Bounds height="68.0" width="14.0" x="206.0" y="146.0"/>
-        </bpmndi:BPMNLabel>
+  <bpmndi:BPMNDiagram id="_PhXmltntEemaB62ZcsxjLQ">
+    <bpmndi:BPMNPlane id="_PhXml9ntEemaB62ZcsxjLQ" bpmnElement="TestProcess.FullProcess">
+      <bpmndi:BPMNShape id="shape_SubProcess_3" bpmnElement="SubProcess_3" isExpanded="true">
+        <dc:Bounds height="185.0" width="511.0" x="425.0" y="16.0"/>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_Lane_2" bpmnElement="Lane_2" isHorizontal="true">
-        <dc:Bounds height="301.0" width="731.0" x="200.0" y="360.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_2">
-          <dc:Bounds height="154.0" width="14.0" x="206.0" y="433.0"/>
-        </bpmndi:BPMNLabel>
+      <bpmndi:BPMNShape id="shape_IntermediateCatchEvent_1" bpmnElement="IntermediateCatchEvent_1">
+        <dc:Bounds height="56.0" width="56.0" x="539.0" y="81.0"/>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_SubProcess_3" bpmnElement="SubProcess_3" isExpanded="true">
-        <dc:Bounds height="185.0" width="511.0" x="400.0" y="16.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_3">
-          <dc:Bounds height="14.0" width="179.0" x="406.0" y="19.0"/>
-        </bpmndi:BPMNLabel>
+      <bpmndi:BPMNShape id="shape_StartEvent_2" bpmnElement="StartEvent_2">
+        <dc:Bounds height="56.0" width="56.0" x="445.0" y="81.0"/>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_EndEvent_1" bpmnElement="EndEvent_1">
-        <dc:Bounds height="36.0" width="36.0" x="70.0" y="479.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_4">
-          <dc:Bounds height="28.0" width="75.0" x="51.0" y="515.0"/>
-        </bpmndi:BPMNLabel>
+      <bpmndi:BPMNShape id="shape_EndEvent_2" bpmnElement="EndEvent_2">
+        <dc:Bounds height="56.0" width="56.0" x="845.0" y="81.0"/>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_StartEvent_1" bpmnElement="StartEvent_1">
-        <dc:Bounds height="36.0" width="36.0" x="52.0" y="89.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_5">
-          <dc:Bounds height="28.0" width="56.0" x="42.0" y="125.0"/>
-        </bpmndi:BPMNLabel>
+      <bpmndi:BPMNEdge id="edge_shape_StartEvent_2_to_shape_IntermediateCatchEvent_1" bpmnElement="SequenceFlow_9">
+        <di:waypoint xsi:type="dc:Point" x="501.0" y="109.0"/>
+        <di:waypoint xsi:type="dc:Point" x="494.0" y="109.0"/>
+        <di:waypoint xsi:type="dc:Point" x="539.0" y="109.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="shape_EndEvent_1" bpmnElement="EndEvent_1">
+        <dc:Bounds height="56.0" width="56.0" x="70.0" y="479.0"/>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_Task_1" bpmnElement="Task_1">
-        <dc:Bounds height="71.0" width="141.0" x="220.0" y="72.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_6">
-          <dc:Bounds height="14.0" width="73.0" x="254.0" y="100.0"/>
-        </bpmndi:BPMNLabel>
+      <bpmndi:BPMNShape id="shape_StartEvent_1" bpmnElement="StartEvent_1">
+        <dc:Bounds height="56.0" width="56.0" x="52.0" y="89.0"/>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_StartEvent_2" bpmnElement="StartEvent_2">
-        <dc:Bounds height="56.0" width="56.0" x="420.0" y="81.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_7"/>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_IntermediateCatchEvent_1" bpmnElement="IntermediateCatchEvent_1">
-        <dc:Bounds height="56.0" width="56.0" x="514.0" y="81.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_8">
-          <dc:Bounds height="28.0" width="68.0" x="508.0" y="137.0"/>
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_EndEvent_2" bpmnElement="EndEvent_2">
-        <dc:Bounds height="56.0" width="56.0" x="820.0" y="81.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_10"/>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_Task_4" bpmnElement="Task_4" isExpanded="true">
+      <bpmndi:BPMNShape id="shape_Task_4" bpmnElement="Task_4">
         <dc:Bounds height="50.0" width="110.0" x="790.0" y="486.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_11">
-          <dc:Bounds height="28.0" width="79.0" x="805.0" y="497.0"/>
-        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_ExclusiveGateway_10" bpmnElement="ExclusiveGateway_10" isMarkerVisible="true">
-        <dc:Bounds height="50.0" width="50.0" x="630.0" y="240.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_12">
-          <dc:Bounds height="14.0" width="76.0" x="617.0" y="290.0"/>
-        </bpmndi:BPMNLabel>
+      <bpmndi:BPMNShape id="shape__A4379EBB-0D86-44DD-A218-E8F8D95AE5EF" bpmnElement="_A4379EBB-0D86-44DD-A218-E8F8D95AE5EF">
+        <dc:Bounds height="102.0" width="154.0" x="229.0" y="58.0"/>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_Task_2" bpmnElement="Task_2">
-        <dc:Bounds height="50.0" width="110.0" x="635.0" y="84.0"/>
-        <bpmndi:BPMNLabel>
-          <dc:Bounds height="14.0" width="102.0" x="639.0" y="102.0"/>
-        </bpmndi:BPMNLabel>
+      <bpmndi:BPMNShape id="shape_ExclusiveGateway_10" bpmnElement="ExclusiveGateway_10">
+        <dc:Bounds height="56.0" width="56.0" x="1013.0" y="213.0"/>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_5" bpmnElement="SequenceFlow_5" sourceElement="BPMNShape_StartEvent_1" targetElement="BPMNShape_Task_1">
-        <di:waypoint xsi:type="dc:Point" x="88.0" y="107.0"/>
-        <di:waypoint xsi:type="dc:Point" x="154.0" y="107.0"/>
-        <di:waypoint xsi:type="dc:Point" x="220.0" y="107.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_13"/>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_6" bpmnElement="SequenceFlow_6" sourceElement="BPMNShape_Task_1" targetElement="BPMNShape_SubProcess_3">
-        <di:waypoint xsi:type="dc:Point" x="361.0" y="107.0"/>
-        <di:waypoint xsi:type="dc:Point" x="380.0" y="107.0"/>
-        <di:waypoint xsi:type="dc:Point" x="400.0" y="108.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_14"/>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_7" bpmnElement="SequenceFlow_7" sourceElement="BPMNShape_Task_2" targetElement="BPMNShape_EndEvent_2">
-        <di:waypoint xsi:type="dc:Point" x="745.0" y="109.0"/>
-        <di:waypoint xsi:type="dc:Point" x="782.0" y="109.0"/>
-        <di:waypoint xsi:type="dc:Point" x="820.0" y="109.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_15"/>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_8" bpmnElement="SequenceFlow_8" sourceElement="BPMNShape_IntermediateCatchEvent_1" targetElement="BPMNShape_Task_2">
-        <di:waypoint xsi:type="dc:Point" x="570.0" y="109.0"/>
-        <di:waypoint xsi:type="dc:Point" x="602.0" y="109.0"/>
-        <di:waypoint xsi:type="dc:Point" x="635.0" y="109.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_16"/>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_9" bpmnElement="SequenceFlow_9" sourceElement="BPMNShape_StartEvent_2" targetElement="BPMNShape_IntermediateCatchEvent_1">
-        <di:waypoint xsi:type="dc:Point" x="476.0" y="109.0"/>
-        <di:waypoint xsi:type="dc:Point" x="495.0" y="109.0"/>
-        <di:waypoint xsi:type="dc:Point" x="514.0" y="109.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_17"/>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_10" bpmnElement="SequenceFlow_10" sourceElement="BPMNShape_SubProcess_3" targetElement="BPMNShape_ExclusiveGateway_10">
-        <di:waypoint xsi:type="dc:Point" x="655.0" y="201.0"/>
-        <di:waypoint xsi:type="dc:Point" x="655.0" y="220.0"/>
-        <di:waypoint xsi:type="dc:Point" x="655.0" y="240.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_18"/>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_11" bpmnElement="SequenceFlow_11" sourceElement="BPMNShape_ExclusiveGateway_10" targetElement="BPMNShape_Task_4">
-        <di:waypoint xsi:type="dc:Point" x="680.0" y="265.0"/>
-        <di:waypoint xsi:type="dc:Point" x="845.0" y="265.0"/>
-        <di:waypoint xsi:type="dc:Point" x="845.0" y="486.0"/>
-        <bpmndi:BPMNLabel id="BPMNLabel_19">
-          <dc:Bounds height="14.0" width="15.0" x="838.0" y="294.0"/>
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_1" bpmnElement="SequenceFlow_1" sourceElement="BPMNShape_Task_4" targetElement="BPMNShape_EndEvent_1">
+      <bpmndi:BPMNShape id="shape_Lane_1" bpmnElement="Lane_1">
+        <dc:Bounds height="322.0" width="951.0" x="200.0" y="10.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape_Lane_2" bpmnElement="Lane_2">
+        <dc:Bounds height="301.0" width="731.0" x="200.0" y="360.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge_shape_Task_4_to_shape_EndEvent_1" bpmnElement="SequenceFlow_1">
         <di:waypoint xsi:type="dc:Point" x="790.0" y="511.0"/>
         <di:waypoint xsi:type="dc:Point" x="448.0" y="511.0"/>
         <di:waypoint xsi:type="dc:Point" x="448.0" y="497.0"/>
         <di:waypoint xsi:type="dc:Point" x="106.0" y="497.0"/>
-        <bpmndi:BPMNLabel/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape_StartEvent_1_to_shape__A4379EBB-0D86-44DD-A218-E8F8D95AE5EF" bpmnElement="SequenceFlow_5">
+        <di:waypoint xsi:type="dc:Point" x="88.0" y="107.0"/>
+        <di:waypoint xsi:type="dc:Point" x="108.0" y="110.411766"/>
+        <di:waypoint xsi:type="dc:Point" x="229.0" y="109.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape_ExclusiveGateway_10_to_shape_Task_4" bpmnElement="SequenceFlow_11">
+        <di:waypoint xsi:type="dc:Point" x="1041.0" y="269.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1041.0" y="511.0"/>
+        <di:waypoint xsi:type="dc:Point" x="900.0" y="511.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__A4379EBB-0D86-44DD-A218-E8F8D95AE5EF_to_shape_SubProcess_3" bpmnElement="_8478F89F-CC9E-4503-94CD-07360C5DD8BF">
+        <di:waypoint xsi:type="dc:Point" x="383.0" y="109.0"/>
+        <di:waypoint xsi:type="dc:Point" x="425.0" y="108.5"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape_ExclusiveGateway_10_to_shape_SubProcess_3" bpmnElement="_2466CAC6-EAE6-4D51-A8AF-A3856954DFB3">
+        <di:waypoint xsi:type="dc:Point" x="1041.0" y="213.0"/>
+        <di:waypoint xsi:type="dc:Point" x="680.5" y="241.0"/>
+        <di:waypoint xsi:type="dc:Point" x="680.5" y="201.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape_SubProcess_3_to_shape_ExclusiveGateway_10" bpmnElement="_21EBFE37-812A-4DE5-8FCD-F634BFA99703">
+        <di:waypoint xsi:type="dc:Point" x="936.0" y="108.5"/>
+        <di:waypoint xsi:type="dc:Point" x="1040.0" y="108.5"/>
+        <di:waypoint xsi:type="dc:Point" x="1041.0" y="213.0"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
+  <bpmn2:relationship id="_PhXmmNntEemaB62ZcsxjLQ" type="BPSimData">
+    <bpmn2:extensionElements>
+      <bpsim:BPSimData>
+        <bpsim:Scenario xsi:type="bpsim:Scenario" id="default" name="Simulationscenario">
+          <bpsim:ScenarioParameters xsi:type="bpsim:ScenarioParameters"/>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="StartEvent_1" id="_PhXmmdntEemaB62ZcsxjLQ">
+            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
+              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
+                <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="Task_4" id="_PhXmmtntEemaB62ZcsxjLQ">
+            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
+              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
+                <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ResourceParameters xsi:type="bpsim:ResourceParameters">
+              <bpsim:Availability xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:Availability>
+              <bpsim:Quantity xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:Quantity>
+            </bpsim:ResourceParameters>
+            <bpsim:CostParameters xsi:type="bpsim:CostParameters">
+              <bpsim:UnitCost xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters xsi:type="bpsim:ElementParameters" elementRef="_A4379EBB-0D86-44DD-A218-E8F8D95AE5EF" id="_PhXmm9ntEemaB62ZcsxjLQ">
+            <bpsim:TimeParameters xsi:type="bpsim:TimeParameters">
+              <bpsim:ProcessingTime xsi:type="bpsim:Parameter">
+                <bpsim:NormalDistribution mean="0.0" standardDeviation="0.0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ResourceParameters xsi:type="bpsim:ResourceParameters">
+              <bpsim:Availability xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:Availability>
+              <bpsim:Quantity xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:Quantity>
+            </bpsim:ResourceParameters>
+            <bpsim:CostParameters xsi:type="bpsim:CostParameters">
+              <bpsim:UnitCost xsi:type="bpsim:Parameter">
+                <bpsim:FloatingParameter value="0.0"/>
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+        </bpsim:Scenario>
+      </bpsim:BPSimData>
+    </bpmn2:extensionElements>
+    <bpmn2:source>_PhW_gNntEemaB62ZcsxjLQ</bpmn2:source>
+    <bpmn2:target>_PhW_gNntEemaB62ZcsxjLQ</bpmn2:target>
+  </bpmn2:relationship>
 </bpmn2:definitions>
