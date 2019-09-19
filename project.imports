@@ -28,6 +28,9 @@
       <import>
         <type>java.util.Date</type>
       </import>
+      <import>
+        <type>ru.bia.process.model.Order</type>
+      </import>
     </imports>
   </imports>
   <version>1.0</version>
