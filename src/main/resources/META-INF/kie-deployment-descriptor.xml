@@ -28,12 +28,6 @@
             <parameters/>
             <name>CheckPutWarehouseStatus</name>
         </work-item-handler>
-        <work-item-handler>
-            <resolver>mvel</resolver>
-            <identifier>new ru.bia.process.handler.PickUpCargoHandler()</identifier>
-            <parameters/>
-            <name>PickUpCargoService</name>
-        </work-item-handler>
     </work-item-handlers>
     <environment-entries/>
     <configurations/>
