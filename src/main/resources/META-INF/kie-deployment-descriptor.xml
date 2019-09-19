@@ -35,7 +35,14 @@
             <name>PickUpCargoService</name>
         </work-item-handler>
     </work-item-handlers>
-    <environment-entries/>
+    <environment-entries>
+        <environment-entry>
+            <resolver>mvel</resolver>
+            <identifier>http://localhost:8082/services/operations</identifier>
+            <parameters/>
+            <name>extServiceUrl</name>
+        </environment-entry>
+    </environment-entries>
     <configurations/>
     <required-roles/>
     <remoteable-classes/>
