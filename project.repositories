@@ -4,7 +4,7 @@
       <include>true</include>
       <metadata>
         <id>local</id>
-        <url>/opt/jboss/.m2/repository</url>
+        <url>/home/sergst/.m2/repository</url>
         <source>LOCAL</source>
       </metadata>
     </repository>
